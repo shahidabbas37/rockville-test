@@ -1,0 +1,620 @@
+{
+	"info": {
+		"_postman_id": "48fa8c04-579a-4b92-b222-5d7aadfc25c3",
+		"name": "rockville Shahid-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18103534"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"shahid\",\n    \"email\":\"shahid@gmail.com\",\n    \"password\":\"shahid@1\",\n    \"address\":\"Rawalpindi\",\n    \"dob\":\"1998-10-30T13:50:32.961+00:00\",\n    \"profileImage\":\"\",\n    \"favCategories\":[\"Action\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"shahid\",\n    \"email\":\"shahid@gmail.com\",\n    \"password\":\"shahid@1\",\n    \"address\":\"Rawalpindi\",\n    \"dob\":\"1998-10-30T13:50:32.961+00:00\",\n    \"profileImage\":\"\",\n    \"favCategories\":[\"Action\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-fitPUZPKufV1xTmKaFdUrYH3BnI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Nov 2023 16:01:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User has been created\"\n}"
+						}
+					]
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQyNTM4Y2YxY2EzZGZiZjQ4YWU3ZDAiLCJpYXQiOjE2OTg4NDU3NjgsImV4cCI6MTY5ODkzMjE2OH0.ccHsWeM2mqs8xcvkK6QKAmmJFHxFySPs6VoA4vPk3I8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"previousPassword\":\"\",\n    \"newPassword\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"email\":\"shahid@gmail.com\",\n    \"password\":\"shahid@1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n    \"email\":\"shahid@gmail.com\",\n    \"password\":\"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "491"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1eb-psA+BbW9KZO2aq27UyK8oBdwpSQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Nov 2023 14:05:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Login Successful\",\n    \"user\": {\n        \"_id\": \"6542538cf1ca3dfbf48ae7d0\",\n        \"name\": \"Ali\",\n        \"email\": \"shahid@gmail.com\",\n        \"favCategories\": [\n            \"Action\"\n        ],\n        \"createdAt\": \"2023-11-01T13:33:00.007Z\",\n        \"updatedAt\": \"2023-11-02T12:27:15.138Z\",\n        \"__v\": 0,\n        \"dob\": \"2023-10-30T15:45:30.000Z\",\n        \"profileImage\": \"src/public/1698928035036.png\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQyNTM4Y2YxY2EzZGZiZjQ4YWU3ZDAiLCJpYXQiOjE2OTg5MzM5MzUsImV4cCI6MTY5OTAyMDMzNX0.q8cJitZiU3PE9JLxAV-G8B_OVuP-ANVXnEi09uAxLds\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQyNTM4Y2YxY2EzZGZiZjQ4YWU3ZDAiLCJpYXQiOjE2OTg4NDU3NjgsImV4cCI6MTY5ODkzMjE2OH0.ccHsWeM2mqs8xcvkK6QKAmmJFHxFySPs6VoA4vPk3I8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"name\":\"Ali\",\n    \"dob\":\"2023-10-30T15:45:30.000Z\",\n    \"profileImage\":\"\",\n    \"favCategories\":[\"Action\"]\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/update-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload profile pic",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQzYzdmMWMyMTdmMzU0OGQ5N2NlNTMiLCJpYXQiOjE2OTg5NDEwMDYsImV4cCI6MTY5OTAyNzQwNn0.NBp7l5h5gTXqDKq6nsqsWuH7WcZ76G5j0BkqIRcJe4k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/shahid/Pictures/Screenshots/Screenshot from 2023-10-30 13-23-51.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/upload-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"upload-profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movies",
+			"item": [
+				{
+					"name": "add review",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQyNTM4Y2YxY2EzZGZiZjQ4YWU3ZDAiLCJpYXQiOjE2OTg4NDU3NjgsImV4cCI6MTY5ODkzMjE2OH0.ccHsWeM2mqs8xcvkK6QKAmmJFHxFySPs6VoA4vPk3I8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"shahid abbas\",\n    \"text\": \"good movie\",\n    \"stars\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/65428600b10bb43c25890e70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"65428600b10bb43c25890e70"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list recommanded movies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQyNTM4Y2YxY2EzZGZiZjQ4YWU3ZDAiLCJpYXQiOjE2OTg5MzE2MjYsImV4cCI6MTY5OTAxODAyNn0.QB1_pcfDxfbYQSSzdMnq_V-Qx9pBcXcVw93ehwbl0as",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list  movies categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQyNTM4Y2YxY2EzZGZiZjQ4YWU3ZDAiLCJpYXQiOjE2OTg5MzE2MjYsImV4cCI6MTY5OTAxODAyNn0.QB1_pcfDxfbYQSSzdMnq_V-Qx9pBcXcVw93ehwbl0as",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQzYzdmMWMyMTdmMzU0OGQ5N2NlNTMiLCJpYXQiOjE2OTg5NDEwMDYsImV4cCI6MTY5OTAyNzQwNn0.NBp7l5h5gTXqDKq6nsqsWuH7WcZ76G5j0BkqIRcJe4k",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/movies/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"movies",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"54-lHqKcOuWuH0MdYpsnJbYskOyeLY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Nov 2023 16:04:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"movies categories\",\n    \"categories\": [\n        \"Action\",\n        \"Animated\",\n        \"Comedy\",\n        \"Horror\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "list  movies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQyNTM4Y2YxY2EzZGZiZjQ4YWU3ZDAiLCJpYXQiOjE2OTg5MzM5MzUsImV4cCI6MTY5OTAyMDMzNX0.q8cJitZiU3PE9JLxAV-G8B_OVuP-ANVXnEi09uAxLds",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/list?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQyNTM4Y2YxY2EzZGZiZjQ4YWU3ZDAiLCJpYXQiOjE2OTg5MzM5MzUsImV4cCI6MTY5OTAyMDMzNX0.q8cJitZiU3PE9JLxAV-G8B_OVuP-ANVXnEi09uAxLds",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/movies/list?page=1&limit=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"movies",
+										"list"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2098"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"832-Dr5UsiZXxGHFPDzzcyJozn6/h2I\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Nov 2023 16:05:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"movies list\",\n    \"movies\": [\n        {\n            \"_id\": \"6543b17221764d25a6134637\",\n            \"name\": \"Movie 1\",\n            \"actor\": \"Actor A\",\n            \"category\": \"Action\",\n            \"rating\": 5,\n            \"reviews\": [\n                {\n                    \"userName\": \"shahid abbas\",\n                    \"text\": \"good movie\",\n                    \"stars\": 5\n                }\n            ],\n            \"__v\": 1,\n            \"createdAt\": \"2023-11-02T14:25:54.342Z\",\n            \"updatedAt\": \"2023-11-02T16:04:25.847Z\"\n        },\n        {\n            \"_id\": \"6543b17221764d25a6134638\",\n            \"name\": \"Movie 2\",\n            \"actor\": \"Actor B\",\n            \"category\": \"Comedy\",\n            \"rating\": 0,\n            \"reviews\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2023-11-02T14:25:54.343Z\",\n            \"updatedAt\": \"2023-11-02T14:25:54.343Z\"\n        },\n        {\n            \"_id\": \"6543b17221764d25a6134639\",\n            \"name\": \"Movie 3\",\n            \"actor\": \"Actor C\",\n            \"category\": \"Horror\",\n            \"rating\": 0,\n            \"reviews\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2023-11-02T14:25:54.343Z\",\n            \"updatedAt\": \"2023-11-02T14:25:54.343Z\"\n        },\n        {\n            \"_id\": \"6543b17221764d25a613463a\",\n            \"name\": \"Movie 4\",\n            \"actor\": \"Actor D\",\n            \"category\": \"Animated\",\n            \"rating\": 0,\n            \"reviews\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2023-11-02T14:25:54.343Z\",\n            \"updatedAt\": \"2023-11-02T14:25:54.343Z\"\n        },\n        {\n            \"_id\": \"6543b17221764d25a613463b\",\n            \"name\": \"Movie 5\",\n            \"actor\": \"Actor E\",\n            \"category\": \"Action\",\n            \"rating\": 0,\n            \"reviews\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2023-11-02T14:25:54.344Z\",\n            \"updatedAt\": \"2023-11-02T14:25:54.344Z\"\n        },\n        {\n            \"_id\": \"6543b17221764d25a613463c\",\n            \"name\": \"Movie 6\",\n            \"actor\": \"Actor F\",\n            \"category\": \"Comedy\",\n            \"rating\": 0,\n            \"reviews\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2023-11-02T14:25:54.344Z\",\n            \"updatedAt\": \"2023-11-02T14:25:54.344Z\"\n        },\n        {\n            \"_id\": \"6543b17221764d25a613463d\",\n            \"name\": \"Movie 7\",\n            \"actor\": \"Actor G\",\n            \"category\": \"Horror\",\n            \"rating\": 0,\n            \"reviews\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2023-11-02T14:25:54.345Z\",\n            \"updatedAt\": \"2023-11-02T14:25:54.345Z\"\n        },\n        {\n            \"_id\": \"6543b17221764d25a613463e\",\n            \"name\": \"Movie 8\",\n            \"actor\": \"Actor H\",\n            \"category\": \"Animated\",\n            \"rating\": 0,\n            \"reviews\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2023-11-02T14:25:54.345Z\",\n            \"updatedAt\": \"2023-11-02T14:25:54.345Z\"\n        },\n        {\n            \"_id\": \"6543b17221764d25a613463f\",\n            \"name\": \"Movie 9\",\n            \"actor\": \"Actor I\",\n            \"category\": \"Action\",\n            \"rating\": 0,\n            \"reviews\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2023-11-02T14:25:54.345Z\",\n            \"updatedAt\": \"2023-11-02T14:25:54.345Z\"\n        },\n        {\n            \"_id\": \"6543b17221764d25a6134640\",\n            \"name\": \"Movie 10\",\n            \"actor\": \"Actor J\",\n            \"category\": \"Comedy\",\n            \"rating\": 0,\n            \"reviews\": [],\n            \"__v\": 0,\n            \"createdAt\": \"2023-11-02T14:25:54.345Z\",\n            \"updatedAt\": \"2023-11-02T14:25:54.345Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
