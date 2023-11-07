@@ -313,13 +313,13 @@
 						"header": [
 							{
 								"key": "authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQyNTM4Y2YxY2EzZGZiZjQ4YWU3ZDAiLCJpYXQiOjE2OTg4NDU3NjgsImV4cCI6MTY5ODkzMjE2OH0.ccHsWeM2mqs8xcvkK6QKAmmJFHxFySPs6VoA4vPk3I8",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ5ZTU0YzllMmY2ZDUyMDNjYzM2OTMiLCJpYXQiOjE2OTkzNDE2NjcsImV4cCI6MTY5OTQyODA2N30.DREXjFQnK_Cjw9YMVOjJj02XeDkYBUtHLh_rregCmAI",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"userName\": \"shahid abbas\",\n    \"text\": \"good movie\",\n    \"stars\": 5\n}",
+							"raw": "{\n    \n    \"text\": \"good movie\",\n    \"stars\": 3\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -327,7 +327,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies/65428600b10bb43c25890e70",
+							"raw": "http://localhost:3000/movies/6543b17221764d25a6134638",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -335,7 +335,7 @@
 							"port": "3000",
 							"path": [
 								"movies",
-								"65428600b10bb43c25890e70"
+								"6543b17221764d25a6134638"
 							]
 						}
 					},
@@ -351,7 +351,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQyNTM4Y2YxY2EzZGZiZjQ4YWU3ZDAiLCJpYXQiOjE2OTg5MzE2MjYsImV4cCI6MTY5OTAxODAyNn0.QB1_pcfDxfbYQSSzdMnq_V-Qx9pBcXcVw93ehwbl0as",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQ5ZTU0YzllMmY2ZDUyMDNjYzM2OTMiLCJpYXQiOjE2OTkzNDE2NjcsImV4cCI6MTY5OTQyODA2N30.DREXjFQnK_Cjw9YMVOjJj02XeDkYBUtHLh_rregCmAI",
 								"type": "text"
 							}
 						],
@@ -388,7 +388,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQyNTM4Y2YxY2EzZGZiZjQ4YWU3ZDAiLCJpYXQiOjE2OTg5MzE2MjYsImV4cCI6MTY5OTAxODAyNn0.QB1_pcfDxfbYQSSzdMnq_V-Qx9pBcXcVw93ehwbl0as",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTQzYzdmMWMyMTdmMzU0OGQ5N2NlNTMiLCJpYXQiOjE2OTkzNDE0OTAsImV4cCI6MTY5OTQyNzg5MH0.HkRPT8aXwpBaO4zW-Q-ek41Sb3z6dnelxChulZtit94",
 								"type": "text"
 							}
 						],
