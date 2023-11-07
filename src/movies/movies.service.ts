@@ -19,6 +19,12 @@ export class MoviesService {
     let movie: any = await this.movieModel.findById({ _id: id });
     if (!movie) return null;
 
+    // Check if the user has already reviewed the movie
+  const hasUserReviewed = movie.reviews.some((review) => review.userName === data.userName);
+  if (hasUserReviewed) {
+    return { message: "User has already reviewed this movie" };
+  }
+
     // Calculate the new average rating
     const existingRatings = movie.reviews.map((review) => review.stars);
     const newTotalRatings = [...existingRatings, data.stars];
@@ -39,10 +45,17 @@ export class MoviesService {
     return await movie.save();
   }
 
-  async listRecommandedMovies(favCategories: string[]) {
+  /**
+   * 
+   * For listing recommanded movies we will use the movies with high rating & latest upload
+   */
+  async listRecommandedMovies() {
     const movies = await this.movieModel.find({
-      category: { $in: favCategories },
-    });
+      rating: { $gt: 0 }, 
+    }).sort({
+      rating: -1,      
+      updatedAt: -1,    
+    }).limit(10);    
 
     return movies;
   }

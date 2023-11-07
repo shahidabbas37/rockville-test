@@ -10,9 +10,10 @@ import { PORT } from './config';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
-  // seeding data
-//const moviesService = app.get(MoviesService);
+ // Uncomment the following line to seed data
+// const moviesService = app.get(MoviesService);
 // await moviesService.seedData(moviesData);
+
   await app.listen(PORT || 3000);
 }
 bootstrap();

@@ -1,4 +1,4 @@
-import { IsString, IsEnum, IsNumber, Min, Max, IsArray } from 'class-validator';
+import { IsString, IsEnum, IsNumber, Min, Max, IsArray, IsOptional } from 'class-validator';
 import { MovieCategory } from '../schemas/movie.schema';
 
 export class CreateMovieDto {
@@ -21,6 +21,7 @@ export class CreateMovieDto {
 
 export class CreateReviewsDto {
   @IsString()
+  @IsOptional()
   userName: string;
 
   @IsString()

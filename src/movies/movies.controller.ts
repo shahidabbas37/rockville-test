@@ -36,11 +36,24 @@ export class MoviesController {
     @Param('id') id: string,
     @Body() createReviewsDto: CreateReviewsDto,
   ) {
+    const user = await this.userService.findbyId(req.user);
+    if (!user)
+      return res.status(HttpStatus.NOT_FOUND).json({
+        message: 'Not Found',
+      });
+
+    createReviewsDto.userName = user.name;
     let movie = await this.moviesService.addReview(id, createReviewsDto);
     if (!movie)
       return res.status(HttpStatus.NOT_FOUND).json({
         message: 'Movie Not Found',
       });
+
+    if (movie.message)
+      return res.status(HttpStatus.BAD_REQUEST).json({
+        message: movie.message,
+      });
+    
     return res.status(HttpStatus.OK).json({
       message: 'review added',
       movie: movie,
@@ -49,16 +62,8 @@ export class MoviesController {
 
   @Get()
   @UseGuards(AuthGuardGuard)
-  async listRecommandedMovies(@Req() req, @Res() res) {
-    const user = await this.userService.findbyId(req.user);
-    if (!user)
-      return res.status(HttpStatus.NOT_FOUND).json({
-        message: 'Not Found',
-      });
-
-    let movies = await this.moviesService.listRecommandedMovies(
-      user.favCategories,
-    );
+  async listRecommandedMovies(@Res() res) {
+    let movies = await this.moviesService.listRecommandedMovies();
     return res.status(HttpStatus.OK).json({
       message: 'recommanded movies',
       movies: movies,
