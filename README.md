@@ -29,7 +29,6 @@ By uncommenting this code, you can ensure that the latest data from the seed-dat
 
 To generate a list of recommended movies, a query is employed to filter out movies with high ratings and those that have been uploaded most recently. These recommendations are further refined by taking into account the user's age group. For instance, users aged 5 to 15 are recommended animated movies, while those aged 16 to 30 receive action movie recommendations. Users aged 30 and above will find comedy movies in their recommendations. Additionally, the user's favorite categories play a role in suggesting movies as well as added pagination. This combined approach ensures that users are presented with highly-rated and recently added movies that align with their age group and preferences.
 
-
 # Postman Collection
 
 You can import the Postman collection for this project. The collection JSON file is included with the project and is named 'rockville Shahid-Test.postman_collection.json'. Import this collection into your Postman for testing the API endpoints.
@@ -41,3 +40,18 @@ The project includes environment variables that are set in the config index file
 # Uploading a Profile Picture
 
 To upload a profile picture, use the provided API endpoint for profile picture upload.
+
+
+# Application Dockerizition
+
+The application's Docker setup can be found in the root directory of the project. To containerize the application, you can follow these steps:
+
+1. Build the Docker image using the following command:
+
+$ docker build -t shahid-test .
+
+2. Run the Docker image with the following command:
+
+$ docker run -p 3000:3000 shahid-test
+
+This will create and run a Docker container for the application, allowing you to access it on port 3000.
