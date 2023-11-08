@@ -53,7 +53,7 @@ export class MoviesController {
       return res.status(HttpStatus.BAD_REQUEST).json({
         message: movie.message,
       });
-    
+
     return res.status(HttpStatus.OK).json({
       message: 'review added',
       movie: movie,
@@ -62,8 +62,21 @@ export class MoviesController {
 
   @Get()
   @UseGuards(AuthGuardGuard)
-  async listRecommandedMovies(@Res() res) {
-    let movies = await this.moviesService.listRecommandedMovies();
+  async listRecommandedMovies(
+    @Query('page') page: number,
+    @Query('limit') limit: number,
+    @Res() res,
+    @Req() req,
+  ) {
+    page = page || 1;
+    limit = limit || 10;
+    const user = await this.userService.findbyId(req.user);
+    if (!user)
+      return res.status(HttpStatus.NOT_FOUND).json({
+        message: 'Not Found',
+      });
+
+    let movies = await this.moviesService.listRecommandedMovies(page,limit,user);
     return res.status(HttpStatus.OK).json({
       message: 'recommanded movies',
       movies: movies,

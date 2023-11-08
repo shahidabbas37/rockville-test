@@ -34,7 +34,6 @@ export class CreateUserDto {
 
   @IsDate()
   @Type(() => Date)
-  @IsOptional()
   dob: Date;
 
   @IsArray()

@@ -20,10 +20,12 @@ export class MoviesService {
     if (!movie) return null;
 
     // Check if the user has already reviewed the movie
-  const hasUserReviewed = movie.reviews.some((review) => review.userName === data.userName);
-  if (hasUserReviewed) {
-    return { message: "User has already reviewed this movie" };
-  }
+    const hasUserReviewed = movie.reviews.some(
+      (review) => review.userName === data.userName,
+    );
+    if (hasUserReviewed) {
+      return { message: 'User has already reviewed this movie' };
+    }
 
     // Calculate the new average rating
     const existingRatings = movie.reviews.map((review) => review.stars);
@@ -46,16 +48,57 @@ export class MoviesService {
   }
 
   /**
-   * 
-   * For listing recommanded movies we will use the movies with high rating & latest upload
+   *
+   * For listing recommanded movies we will use the movies with high rating ,latest upload
+   * user age and user favourite categories
    */
-  async listRecommandedMovies() {
-    const movies = await this.movieModel.find({
-      rating: { $gt: 0 }, 
-    }).sort({
-      rating: -1,      
-      updatedAt: -1,    
-    }).limit(10);    
+  async listRecommandedMovies(page: number, limit: number, user) {
+    const skipCount = (page - 1) * limit;
+
+    // Calculate the user's age from the date of birth
+    const userDob = user.dob;
+    const today = new Date();
+    const userAge = today.getFullYear() - userDob.getFullYear();
+   
+    // Define age-to-category mappings
+    const ageCategoryMappings = {
+      '5-15': 'Animated',
+      '18-30': 'Action',
+      '30+': 'Comedy',
+    };
+
+    // Determine the user's age group based on age mappings
+    let userCategory = 'Action';
+    for (const ageRange in ageCategoryMappings) {
+      const [minAge, maxAge] = ageRange.split('-');
+      if (
+        (!minAge || userAge >= parseInt(minAge, 10)) &&
+        (!maxAge || userAge <= parseInt(maxAge, 10))
+      ) {
+        userCategory = ageCategoryMappings[ageRange];
+        break;
+      }
+    }
+
+    // Get the user's favorite categories (if available)
+    const userFavoriteCategories = user.favCategories || [];
+
+    // Define the category filter based on age and favorite categories
+    const categoryFilter = [...userFavoriteCategories, userCategory];
+
+    console.log('Category Filter', categoryFilter);
+
+    const movies = await this.movieModel
+      .find({
+        category: { $in: categoryFilter },
+        rating: { $gt: 0 },
+      })
+      .sort({
+        rating: -1,
+        updatedAt: -1,
+      })
+      .skip(skipCount)
+      .limit(limit);
 
     return movies;
   }
