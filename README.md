@@ -27,7 +27,8 @@ By uncommenting this code, you can ensure that the latest data from the seed-dat
 
 # Recommanded Movies
 
-To list recommended movies, a query is used to identify movies with high ratings and those that have been uploaded most recently. This approach aims to provide users with movies that are both highly rated and recently added.
+To generate a list of recommended movies, a query is employed to filter out movies with high ratings and those that have been uploaded most recently. These recommendations are further refined by taking into account the user's age group. For instance, users aged 5 to 15 are recommended animated movies, while those aged 16 to 30 receive action movie recommendations. Users aged 30 and above will find comedy movies in their recommendations. Additionally, the user's favorite categories play a role in suggesting movies as well as added pagination. This combined approach ensures that users are presented with highly-rated and recently added movies that align with their age group and preferences.
+
 
 # Postman Collection
 
